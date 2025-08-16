@@ -1,338 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Soumyajit Tarafdar — Portfolio</title>
-  <meta name="description" content="Portfolio of Soumyajit Tarafdar: Relationship-driven Technology Leader | Enterprise & Data Architecture | Banking & Risk Platforms. Search skills and see relevant work, case studies, and a career timeline.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <meta property="og:title" content="Soumyajit Tarafdar — Portfolio">
-  <meta property="og:description" content="Relationship-driven Technology Leader | Enterprise & Data Architecture | Banking & Risk Platforms">
-  <meta property="og:type" content="website">
-  <style>
-    :root {
-      --bg: #0b1220;
-      --panel: #111a2b;
-      --muted: #9fb0ce;
-      --text: #e6eefc;
-      --accent: #4da3ff;
-      --chip: #1a2740;
-      --line: rgba(77,163,255,0.35);
-    }
-    [data-theme="light"] {
-      --bg: #f7f9fd;
-      --panel: #ffffff;
-      --muted: #51607a;
-      --text: #0e1726;
-      --accent: #2456b3;
-      --chip: #eef2f8;
-      --line: rgba(36,86,179,0.35);
-    }
-    * { box-sizing: border-box; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header { max-width: 1200px; margin: 24px auto 8px; padding: 0 20px; }
-    .topbar { display:flex; align-items:center; justify-content: space-between; gap: 12px; }
-    .brand { font-size: 20px; font-weight: 700; }
-    .panel { background: var(--panel); border: 1px solid rgba(27,38,64,0.35); border-radius: 16px; padding: 20px; }
-    main { max-width: 1200px; margin: 0 auto 80px; padding: 0 20px; display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
-    @media (min-width: 1024px) {
-      main { grid-template-columns: 1.1fr 0.9fr; }
-    }
-    .left, .right { display: grid; gap: 24px; }
-    .contact { display:flex; gap:16px; flex-wrap: wrap; margin-top: 8px; color: var(--muted); }
-    .tagline { color: var(--muted); margin-top: 6px; }
-    .searchbar input { width: 100%; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(27,38,64,0.35); background: transparent; color: var(--text); font-size: 16px; }
-    .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .chip { border: 1px solid rgba(27,38,64,0.35); background: var(--chip); padding: 8px 12px; border-radius: 999px; font-size: 13px; cursor: pointer; user-select: none; }
-    .chip.active { outline: 2px solid var(--accent); background: color-mix(in oklab, var(--chip), var(--accent) 20%); }
-    .section-title { font-size: 18px; margin: 0 0 8px 0; color: var(--muted); }
-    .cards { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (min-width: 760px) { .cards { grid-template-columns: 1fr 1fr; } }
-    .card { background: var(--panel); border: 1px solid rgba(27,38,64,0.35); border-radius: 16px; padding: 18px; }
-    .card h3 { margin: 0 0 6px 0; font-size: 18px; }
-    .card .meta { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
-    .highlights { margin: 8px 0 0 16px; }
-    .toolbar { display:flex; align-items:center; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
-    .btn { padding: 10px 14px; border-radius: 10px; background: transparent; border: 1px solid rgba(27,38,64,0.35); color: var(--text); cursor: pointer; }
-    .btn:hover { background: rgba(27,38,64,0.12); }
-    footer { max-width: 1200px; margin: 10px auto 60px; padding: 0 20px; color: var(--muted); }
-    .hint { color: var(--muted); font-size: 14px; }
-    details { margin-top: 8px; }
-    summary { cursor: pointer; }
-
-    /* Timeline */
-    .timeline { position: relative; padding-left: 30px; }
-    .timeline::before { content: ""; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: var(--line); }
-    .t-item { position: relative; margin-bottom: 16px; }
-    .t-item::before { content: ""; position: absolute; left: 7px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
-    .t-title { font-weight: 600; }
-    .t-meta { color: var(--muted); font-size: 13px; }
-    .t-role { margin: 4px 0; }
-    @media print { .toolbar, .skills { display: none !important; } body { background: white; color: black; } .panel, .card { background: white; border-color: #ddd; } }
-  </style>
-
-  <!-- Google Analytics 4 (replace G-XXXXXXXXXX with your GA ID) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Soumyajit Tarafdar",
-    "jobTitle": "Technology Leader / Enterprise Architect",
-    "address": "Whitby, ON, Canada",
-    "email": "mailto:soumyajit0212@gmail.com",
-    "url": "",
-    "sameAs": ["https://www.linkedin.com/in/soumtarafdar"]
-  }
-  </script>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Soumyajit Tarafdar — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1022;--bg-accent:#0b122a;--text:#e9eefc;--muted:#a4b2d4;--border:#1e2a52;--panel:#0f1631cc;--panel-solid:#11193a;--accent:#7cb2ff;--accent-2:#b68cff;--chip:#15224a;--shadow:0 10px 30px rgba(0,0,0,.35);--ring:0 0 0 2px color-mix(in oklab,var(--accent),transparent 65%);--grad-1:radial-gradient(800px 500px at 10% -10%,rgba(124,178,255,.25),transparent 60%);--grad-2:radial-gradient(700px 400px at 120% 20%,rgba(182,140,255,.18),transparent 60%)}
+[data-theme="light"]{--bg:#f7f9ff;--bg-accent:#eef3ff;--text:#0f1a2f;--muted:#546386;--border:#d8e1ff;--panel:#ffffffcc;--panel-solid:#ffffff;--accent:#2a67ff;--accent-2:#7a3cff;--chip:#eef3ff;--shadow:0 10px 20px rgba(0,0,0,.08);--ring:0 0 0 2px color-mix(in oklab,var(--accent),transparent 70%);--grad-1:radial-gradient(900px 500px at -10% -20%,rgba(42,103,255,.12),transparent 60%);--grad-2:radial-gradient(700px 400px at 130% 10%,rgba(122,60,255,.10),transparent 60%)}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);background-image:var(--grad-1),var(--grad-2);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{max-width:1250px;margin:24px auto 8px;padding:0 20px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px}.avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;box-shadow:var(--shadow)}.brand h1{font-size:20px;margin:0}.theme-btn{padding:10px 12px;border-radius:10px;background:var(--panel);border:1px solid var(--border);color:var(--text);cursor:pointer;box-shadow:var(--shadow)}.theme-btn:hover{box-shadow:0 12px 28px rgba(0,0,0,.18)}.stats{color:var(--muted);font-size:13px}
+main{max-width:1250px;margin:0 auto 80px;padding:0 20px;display:grid;grid-template-columns:1fr;gap:24px;align-items:start}@media (min-width:1080px){main{grid-template-columns:1.15fr .85fr}}.left,.right{display:grid;gap:24px}.panel{background:var(--panel);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--shadow)}.panel-solid{background:var(--panel-solid);border:1px solid var(--border)}
+.section-title{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px 0}.tagline{color:var(--muted);margin-top:6px}.contact{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;color:var(--muted)}
+.right > .panel{position:sticky;top:16px}.right > .panel + .panel{position:static}@media (max-width:1079px){.right > .panel{position:static}}
+.searchbar input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-accent);color:var(--text);font-size:15px;outline:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--chip);padding:8px 12px;border-radius:999px;font-size:13px;cursor:pointer;user-select:none;transition:transform .12s ease}.chip:hover{transform:translateY(-1px)}.chip.active{outline:var(--ring);background:color-mix(in oklab,var(--chip),var(--accent) 18%)}
+.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}.btn{padding:10px 14px;border-radius:10px;background:var(--bg-accent);border:1px solid var(--border);color:var(--text);cursor:pointer}.btn:hover{filter:brightness(1.05)}
+.cards{display:grid;grid-template-columns:1fr;gap:14px}@media (min-width:760px){.cards.split-2{grid-template-columns:1fr 1fr}}.card{background:var(--panel-solid);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow);animation:fadeUp .4s ease both}.card h3{margin:0 0 6px 0;font-size:18px}.card .meta{color:var(--muted);font-size:13px;margin-bottom:8px}.highlights{margin:8px 0 0 16px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.timeline{position:relative;padding-left:28px}.timeline::before{content:"";position:absolute;left:12px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent-2));border-radius:2px;opacity:.7}.t-year{font-weight:700;margin:14px 0 8px;color:var(--accent)}.t-item{position:relative;margin:10px 0 16px;padding-left:8px}.t-item::before{content:"";position:absolute;left:-19px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--panel-solid);border:2px solid var(--accent);box-shadow:var(--shadow)}.t-title{font-weight:700}.t-meta{color:var(--muted);font-size:13px}.t-role{margin:4px 0}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{.right,.theme-btn,.toolbar,.skills{display:none!important}body{background:#fff;color:#000}.panel,.card{background:#fff!important;border-color:#ddd!important;box-shadow:none!important}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 </head>
 <body>
-  <header>
-    <div class="topbar">
-      <div class="brand">Soumyajit Tarafdar</div>
-      <button id="theme" class="btn" title="Toggle light/dark">🌙</button>
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="avatar">ST</div>
+      <div>
+        <h1 style="margin:0;">Soumyajit Tarafdar</h1>
+        <div class="stats">Whitby, ON, Canada · <a href="mailto:soumyajit0212@gmail.com">soumyajit0212@gmail.com</a> · <a href="https://www.linkedin.com/in/soumtarafdar" target="_blank" rel="noopener">LinkedIn</a> · (647) 272-4382</div>
+      </div>
     </div>
-  </header>
+    <button id="theme" class="theme-btn" title="Toggle light/dark">🌙</button>
+  </div>
+</header>
+<main>
+  <div class="left">
+    <section class="panel">
+      <div class="section-title">Profile</div>
+      <h2 style="margin:0 0 6px 0">Relationship-driven Technology Leader • Enterprise & Data Architecture • Banking & Risk Platforms</h2>
+      <p class="tagline">Outcome-led delivery across Finance & Risk, API-first modernization, and governed data platforms. Hands-on with Databricks/Kafka and OSFI/SOX controls.</p>
+    </section>
+    <section class="panel">
+      <div class="section-title">All Experience</div>
+      <div id="all" class="cards split-2"></div>
+    </section>
+    <section class="panel">
+      <div class="section-title">Projects / Case Studies — All</div>
+      <div id="proj-all" class="cards split-2"></div>
+    </section>
+    <section class="panel">
+      <div class="section-title">Career Timeline</div>
+      <div id="timeline" class="timeline"></div>
+    </section>
+  </div>
+  <aside class="right">
+    <section class="panel">
+      <div class="section-title">Find by Skill</div>
+      <div class="searchbar"><input id="search" type="search" placeholder="Try: Kafka, Databricks, OSFI, microservices…" aria-label="Search skills"/></div>
+      <div id="skills" class="skills"></div>
+      <div class="toolbar">
+        <button id="clear" class="btn" title="Clear all filters">Clear</button>
+        <button id="print" class="btn" title="Print/Save to PDF">Print</button>
+        <a id="download" class="btn" href="resume.pdf" download>Download PDF</a>
+      </div>
+    </section>
+    <section class="panel">
+      <div class="section-title">Relevant Work</div>
+      <div id="relevant" class="cards"></div>
+      <div id="no-results" class="tagline" style="display:none;">No matching items.</div>
+    </section>
+    <section class="panel">
+      <div class="section-title">Relevant Projects</div>
+      <div id="proj-relevant" class="cards"></div>
+      <div id="proj-no-results" class="tagline" style="display:none;">No matching projects.</div>
+    </section>
+  </aside>
+</main>
+<footer style="max-width:1250px;margin:10px auto 60px;padding:0 20px;color:var(--muted)">© 2025 Soumyajit Tarafdar. Single-file static site — deploy on GitHub Pages/Netlify/Cloudflare Pages.</footer>
+<script>
+const prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+const savedTheme=localStorage.getItem('theme');const themeBtn=document.getElementById('theme');
+function applyTheme(t){if(t==='light')document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');themeBtn.textContent=(t==='light')?'☀️':'🌙';}
+applyTheme(savedTheme||(prefersDark?'dark':'light'));
+themeBtn.addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';const next=current==='light'?'dark':'light';localStorage.setItem('theme',next);applyTheme(next);});
 
-  <main>
-    <!-- LEFT COLUMN -->
-    <div class="left">
-      <section class="panel">
-        <h2 style="margin:0;">Profile</h2>
-        <div class="tagline">Relationship-driven Technology Leader | Enterprise & Data Architecture | Banking & Risk Platforms</div>
-        <div class="contact">
-          <div>📍 Whitby, ON, Canada</div>
-          <div>✉️ <a href="mailto:soumyajit0212@gmail.com">soumyajit0212@gmail.com</a></div>
-          <div>🔗 <a href="https://www.linkedin.com/in/soumtarafdar" target="_blank" rel="noopener">LinkedIn</a></div>
-		  <div>🔗 <a href="https://soumyajit0212.github.io/soumyajittarafdar.github.io" target="_blank" rel="noopener">Personal Profile</a></div>
-          <div>📞 (647) 272-4382</div>
-        </div>
-      </section>
+const SKILLS=["Architecture", "Enterprise Architecture", "Microservices", "Event-Driven Systems", "Headless Design", "Java", "Spring Boot", "Python", "React", "REST APIs", "SOAP APIs", "Azure", "Oracle Cloud", "AWS", "Databricks", "Delta Lake", "SQL", "NoSQL", "Snowflake", "Kafka", "NiFi", "Data Catalog", "Data Governance", "Collibra", "Data Quality", "OSFI", "SOX", "PCI-DSS", "API Security", "OAuth2", "TLS", "HSM", "Oracle ERP", "OFSAA", "FCCM", "EPM", "Hyperion", "Financial Accounting Hub", "Oracle Integration Cloud (OIC)", "Oracle SOA Suite", "WebLogic", "BPEL", "OSB", "Mediator", "SOA Suite 12c", "CI/CD", "Jenkins", "Docker", "Kubernetes", "Terraform", "GitHub", "Bitbucket", "Jira", "JFrog", "Nexus", "Selenium", "Cucumber", "Automation", "OpenAI", "LLMs", "GenAI", "OKTA", "OID", "Power BI", "Tableau", "Blockchain", "Counterparty Risk", "Credit Risk"];
+const EXPERIENCE=[{"role": "Senior Manager, Technology Delivery (Director-track)", "company": "TD Bank", "dates": "Mar 2022 – Present", "location": "Toronto, Canada", "highlights": ["Led $20M+ Finance & Risk transformation; migrated legacy platforms to Oracle Cloud & Azure.", "Designed API-first microservices and Azure Databricks pipelines with Kafka/NiFi for streaming.", "Rolled out Enterprise Data Catalog (Collibra), improving data quality scores by 35%.", "Championed GenAI/LLM automations (code-to-docs, invoice-to-text), saving 1,000+ hours annually.", "Implemented CI/CD and testing automation, cutting deployment cycles by ~40%.", "Delivered OSFI/SOX-compliant solutions for credit/counterparty risk reporting."], "skills": ["Microservices", "REST APIs", "Azure", "Oracle Cloud", "Databricks", "Kafka", "NiFi", "Collibra", "Data Governance", "OSFI", "SOX", "CI/CD", "Jenkins", "Bitbucket", "Selenium", "Cucumber", "GenAI", "LLMs", "Oracle Integration Cloud (OIC)", "API Security", "OAuth2"]}, {"role": "Senior Manager / Solutions Architect", "company": "Scotiabank", "dates": "Nov 2018 – Mar 2022", "location": "Toronto, Canada", "highlights": ["Modernized Oracle finance platforms (FAH/OFSAA); real-time replication via Spring Boot + Kafka.", "Migrated to Azure PaaS; reduced licensing by $350K/year; mobile workflow for procurement.", "Invoice processing with OpenAI LLM; reduced manual AP workload by ~60%.", "Piloted distributed ledger (blockchain) for procurement; drove DevOps automation."], "skills": ["Financial Accounting Hub", "OFSAA", "Azure", "Spring Boot", "Kafka", "OpenAI", "LLMs", "Blockchain", "CI/CD", "Jenkins", "Bitbucket", "Jira", "Power BI", "Tableau", "API Security"]}, {"role": "Senior Applications Architect", "company": "MYSSC, Govt. of Ontario", "dates": "Mar 2018 – Nov 2018", "location": "Toronto, Canada", "highlights": ["Oracle ERP administration and roadmap to Oracle Cloud@Customer; licensing & tech requirements.", "E-Business Suite + OpenText via SOA Gateway; reduced latency by ~40%.", "Automated patching/cloning via CI/CD; minimized downtime during quarterly PSUs; tuned ETL/reporting SQL."], "skills": ["Oracle ERP", "Oracle SOA Suite", "WebLogic", "CI/CD", "Automation", "Performance Tuning"]}, {"role": "Oracle Database Architect", "company": "Experian Marketing Services Sdn Bhd", "dates": "Feb 2014 – Dec 2017", "location": "Kuala Lumpur, Malaysia", "highlights": ["Led 12+ DB/Middleware admins; migrated 50+ DBs to Exadata X6-2 & Oracle Cloud; +30% perf.", "Implemented Oracle Big Data Appliance; deployed SOA Suite 12c; enabled OKTA zero-trust.", "DevOps pipelines (Bitbucket/Jenkins/ServiceNow) across EBS, OBIEE, Hyperion, SOA."], "skills": ["Exadata", "Oracle Cloud", "Oracle SOA Suite", "OKTA", "CI/CD", "Jenkins", "Bitbucket", "Hadoop", "Spark", "Hyperion", "OBIEE"]}, {"role": "Senior Oracle Applications DBA", "company": "Tata Consultancy Services", "dates": "Dec 2008 – Jan 2014", "location": "Kolkata, India", "highlights": ["Global R12 upgrades; ensured 99.9% uptime for financial systems across US/UK/EMEA.", "Patching, cloning, and RAC upgrades; SSL; SQL/app performance optimization.", "Responsibilities & change controls; 24/7 production operations support."], "skills": ["Oracle ERP", "R12", "RAC", "SSL", "Performance Tuning", "Change Management"]}];
+const PROJECTS=[{"title": "Finance & Risk Transformation (TD Bank)", "summary": "Oracle Cloud + Azure modernization with API-first microservices and governed data flow.", "details": ["Azure Databricks pipelines for batch + streaming; Kafka/NiFi ingestion.", "Collibra Data Catalog rollout; improved data-quality and glossary coverage.", "OSFI/SOX controls across data lineage, access, and change management."], "outcomes": ["Release cycle -40% via CI/CD", "1,000+ hours saved via LLM automations"], "skills": ["Azure", "Databricks", "Kafka", "NiFi", "Collibra", "OSFI", "SOX", "Microservices", "CI/CD", "LLMs"]}, {"title": "Real-time Finance Replication (Scotiabank)", "summary": "Spring Boot + Kafka eventing for near real-time reconciliations and reporting.", "details": ["Event-driven integration with FAH/OFSAA microservices.", "Azure PaaS migration; $350K/year licensing optimization."], "outcomes": ["Faster close & reporting", "$350K/year cost reduction"], "skills": ["Spring Boot", "Kafka", "Azure", "Financial Accounting Hub", "OFSAA", "Microservices"]}, {"title": "Invoice Automation with LLMs", "summary": "OpenAI-based invoice capture and coding with human-in-the-loop validation.", "details": ["Reduced manual AP workload by ~60%; compliance-aware processing.", "Improved cycle time and coding accuracy."], "outcomes": ["~60% manual effort reduction", "Lower processing time"], "skills": ["OpenAI", "LLMs", "Automation", "API Security"]}, {"title": "Exadata Consolidation & Zero-Trust (Experian)", "summary": "Exadata consolidation (50+ DBs) and zero-trust patterns via OKTA across middleware.", "details": ["SOA Suite 12c; standardized pipelines (Bitbucket/Jenkins/ServiceNow).", "Post-migration performance +30%; simplified ops."], "outcomes": ["+30% performance", "Unified DevOps pipeline"], "skills": ["Exadata", "Oracle SOA Suite", "OKTA", "CI/CD", "Hadoop", "Spark", "Hyperion", "OBIEE"]}];
 
-      <section class="panel">
-        <div class="section-title">All Experience</div>
-        <div id="all" class="cards"></div>
-      </section>
-
-      <section class="panel">
-        <div class="section-title">Projects / Case Studies — All</div>
-        <div id="proj-all" class="cards"></div>
-      </section>
-
-      <section class="panel">
-        <div class="section-title">Career Timeline</div>
-        <div id="timeline" class="timeline"></div>
-      </section>
-    </div>
-
-    <!-- RIGHT COLUMN -->
-    <aside class="right">
-      <section class="panel">
-        <div class="section-title">Search skills to see relevant work</div>
-        <div class="searchbar">
-          <input id="search" type="search" placeholder="Try: Kafka, Databricks, OSFI, microservices..." aria-label="Search skills">
-        </div>
-        <div id="skills" class="skills"></div>
-        <div class="toolbar">
-          <button id="clear" class="btn" title="Clear all filters">Clear</button>
-          <button id="print" class="btn" title="Print/Save to Word">Print</button>
-          <a id="download" class="btn" href="Soumyajit_Tarafdar_new_format.docx" download>Download Word</a>
-        </div>
-      </section>
-
-      <section class="panel">
-        <div class="section-title">Relevant Work</div>
-        <div id="relevant" class="cards"></div>
-        <div id="no-results" class="hint" style="display:none;">No matching items. Try a different skill or clear filters.</div>
-      </section>
-
-      <section class="panel">
-        <div class="section-title">Projects / Case Studies — Relevant</div>
-        <div id="proj-relevant" class="cards"></div>
-        <div id="proj-no-results" class="hint" style="display:none;">No matching projects. Try different skills or clear filters.</div>
-      </section>
-    </aside>
-  </main>
-
-  <footer>
-    <div>© 2025 Soumyajit Tarafdar. Single-file static site—deploy on GitHub Pages, Netlify, or Cloudflare Pages.</div>
-  </footer>
-
-  <script>
-    // --- Theme (dark/light) ---
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme'); // 'dark' | 'light' | null
-    const themeBtn = document.getElementById('theme');
-    function applyTheme(t) {
-      if (t === 'light') document.documentElement.setAttribute('data-theme','light');
-      else document.documentElement.removeAttribute('data-theme');
-      themeBtn.textContent = (t === 'light') ? '☀️' : '🌙';
-    }
-    applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
-    themeBtn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-      const next = current === 'light' ? 'dark' : 'light';
-      localStorage.setItem('theme', next);
-      applyTheme(next);
-    });
-
-    // --- Data ---
-    const SKILLS = ["API Security", "AWS", "Automation", "Azure", "BPEL", "Bitbucket", "Blockchain", "CI/CD", "Collibra", "Counterparty Risk", "Credit Risk", "Cucumber", "Data Catalog", "Data Governance", "Data Quality", "Databricks", "Delta Lake", "Docker", "EPM", "Enterprise Architecture", "Event-Driven Systems", "FCCM", "GenAI", "GitHub", "HSM", "Headless Design", "Hyperion", "JFrog", "Java", "Jenkins", "Jira", "Kafka", "Kubernetes", "LLMs", "Mediator", "Microservices", "Nexus", "NiFi", "NoSQL", "OAuth2", "OFSAA", "OKTA", "OSB", "OSFI", "Ontology Mapping", "OpenAI", "Oracle Access Manager (OAM)", "Oracle Cloud", "Oracle ERP", "Oracle Financial Accounting Hub", "Oracle Integration Cloud (OIC)", "Oracle Internet Directory (OID)", "Oracle SOA Suite", "PCI-DSS", "Power BI", "Python", "REST APIs", "React", "SOA Suite 12c", "SOAP APIs", "SOX", "SQL", "Selenium", "Semantic Mapping", "Snowflake", "Spring Boot", "TLS", "Tableau", "Terraform", "WebLogic"];
-    const EXPERIENCE = [{"role": "Senior Manager, Technology Delivery (Director-track)", "company": "TD Bank", "dates": "Mar 2022 – Present", "location": "Toronto, Canada", "highlights": ["Led $20M+ Finance & Risk transformation; migrated legacy platforms to Oracle Cloud & Azure.", "Designed API-first microservices and Azure Databricks pipelines with Kafka/NiFi for streaming.", "Rolled out Enterprise Data Catalog (Collibra), improving data quality scores by 35%.", "Championed GenAI/LLM automations (code-to-docs, invoice-to-text), saving 1,000+ hours annually.", "Implemented CI/CD (Jenkins/Bitbucket) and testing automation (Selenium+Cucumber), cutting deployment cycles by 40%.", "Delivered OSFI/SOX-compliant solutions for credit/counterparty risk reporting."], "skills": ["Microservices", "REST APIs", "Azure", "Oracle Cloud", "Databricks", "Kafka", "NiFi", "Data Catalog", "Collibra", "Data Governance", "OSFI", "SOX", "CI/CD", "Jenkins", "Bitbucket", "Selenium", "Cucumber", "GenAI", "LLMs", "Oracle Integration Cloud (OIC)", "API Security", "OAuth2"]}, {"role": "Senior Manager / Solutions Architect", "company": "Scotiabank", "dates": "Nov 2018 – Mar 2022", "location": "Toronto, Canada", "highlights": ["Led $15M modernization of Oracle finance platforms (FAH/OFSAA), enabling real-time replication via Spring Boot + Kafka.", "Migrated legacy to Azure PaaS; reduced licensing by $350K/year; integrated mobile workflow for procurement.", "Built invoice processing with OpenAI LLM; reduced manual AP workload by ~60%.", "Piloted distributed ledger (blockchain) for secure procurement; drove DevOps automation across legacy stacks."], "skills": ["Oracle Financial Accounting Hub", "OFSAA", "Azure", "Spring Boot", "Kafka", "OpenAI", "LLMs", "Blockchain", "CI/CD", "Jenkins", "Bitbucket", "Jira", "Power BI", "Tableau", "API Security"]}, {"role": "Senior Applications Architect", "company": "MYSSC, Govt. of Ontario", "dates": "Mar 2018 – Nov 2018", "location": "Toronto, Canada", "highlights": ["Led Oracle ERP administration and roadmap to Oracle Cloud@Customer; negotiated licensing & tech requirements.", "Integrated E-Business Suite with OpenText via SOA Gateway; reduced latency by 40%.", "Automated patching/cloning via CI/CD; minimized downtime during quarterly PSUs; tuned ETL/reporting SQL."], "skills": ["Oracle ERP", "Oracle SOA Suite", "WebLogic", "CI/CD", "Automation", "Performance Tuning"]}, {"role": "Oracle Database Architect", "company": "Experian Marketing Services Sdn Bhd", "dates": "Feb 2014 – Dec 2017", "location": "Kuala Lumpur, Malaysia", "highlights": ["Led 12+ DB/Middleware admins; migrated 50+ DBs to Exadata X6-2 & Oracle Cloud, boosting performance by 30%.", "Implemented Oracle Big Data Appliance with Spark/Hadoop; deployed SOA Suite 12c; enabled zero-trust via OKTA.", "Built DevOps pipelines (Bitbucket/Jenkins/ServiceNow) across Oracle EBS, OBIEE, Hyperion, and SOA."], "skills": ["Exadata", "Oracle Cloud", "Oracle SOA Suite", "OKTA", "CI/CD", "Jenkins", "Bitbucket", "Hadoop", "Spark", "Hyperion", "OBIEE"]}, {"role": "Senior Oracle Applications DBA", "company": "Tata Consultancy Services", "dates": "Dec 2008 – Jan 2014", "location": "Kolkata, India", "highlights": ["Led global R12 upgrades; ensured 99.9% uptime for financial systems across US/UK/EMEA.", "Managed patching, cloning, and RAC upgrades; implemented SSL; optimized SQL/app performance.", "Configured alerts, responsibilities, and change controls; supported 24/7 production operations."], "skills": ["Oracle ERP", "R12", "RAC", "SSL", "Performance Tuning", "Change Management"]}];
-    const PROJECTS = [{"title": "Finance & Risk Transformation (TD Bank)", "summary": "Modernized finance and risk platforms with Oracle Cloud & Azure; introduced API-first microservices and governed data flow.", "details": ["Architected Azure Databricks pipelines for batch + streaming workloads; integrated Kafka/NiFi.", "Rolled out Collibra Data Catalog; improved data-quality scores by 35% and glossary coverage.", "Established OSFI/SOX controls across data lineage, access, and change management."], "outcomes": ["Release cycle -40% via CI/CD", "1,000+ hours saved annually via LLM automations"], "skills": ["Azure", "Databricks", "Kafka", "NiFi", "Collibra", "OSFI", "SOX", "Microservices", "CI/CD", "LLMs"]}, {"title": "Real-time Finance Replication (Scotiabank)", "summary": "Enabled real-time finance data replication with Spring Boot and Kafka to accelerate reconciliations and reporting.", "details": ["Integrated Oracle FAH/OFSAA with event-driven microservices.", "Reduced licensing by $350K/year by moving to Azure PaaS and rationalizing tooling."], "outcomes": ["Faster close & reporting", "$350K/year cost reduction"], "skills": ["Spring Boot", "Kafka", "Azure", "Oracle Financial Accounting Hub", "OFSAA", "Microservices"]}, {"title": "Invoice Automation with LLMs", "summary": "Automated invoice capture and coding using OpenAI-based extraction and validation workflows.", "details": ["Cut manual AP workload by ~60% with human-in-the-loop validation.", "Hardened PII handling and retention policies to meet compliance."], "outcomes": ["~60% manual effort reduction", "Lower processing time"], "skills": ["OpenAI", "LLMs", "Automation", "API Security"]}, {"title": "Oracle ERP Cloud@Customer Roadmap (MYSSC)", "summary": "Planned and executed Oracle ERP move to Cloud@Customer with robust integration and SLAs.", "details": ["Integrated EBS with OpenText via SOA Gateway; -40% latency.", "Automated patching/cloning; improved availability during PSUs."], "outcomes": ["Lower latency", "Fewer maintenance windows"], "skills": ["Oracle ERP", "Oracle SOA Suite", "WebLogic", "Automation"]}, {"title": "Exadata Consolidation & Zero-Trust (Experian)", "summary": "Consolidated 50+ DBs onto Exadata; introduced OKTA-based zero-trust patterns across middleware.", "details": ["Deployed SOA Suite 12c; standardized pipelines (Bitbucket/Jenkins/ServiceNow).", "Performance +30% post-migration; simplified ops across EBS/OBIEE/Hyperion."], "outcomes": ["+30% performance", "Unified DevOps pipeline"], "skills": ["Exadata", "Oracle SOA Suite", "OKTA", "CI/CD", "Hadoop", "Spark", "Hyperion", "OBIEE"]}];
-
-    // --- Elements ---
-    const elSkills = document.getElementById('skills');
-    const elSearch = document.getElementById('search');
-    const elRelevant = document.getElementById('relevant');
-    const elNo = document.getElementById('no-results');
-    const elAll = document.getElementById('all');
-    const elProjRel = document.getElementById('proj-relevant');
-    const elProjNo = document.getElementById('proj-no-results');
-    const elProjAll = document.getElementById('proj-all');
-    const elTimeline = document.getElementById('timeline');
-    const elClear = document.getElementById('clear');
-    const elPrint = document.getElementById('print');
-
-    // --- Skills chips ---
-    const active = new Set();
-    function renderChips() {
-      elSkills.innerHTML = '';
-      SKILLS.forEach(s => {
-        const chip = document.createElement('button');
-        chip.className = 'chip' + (active.has(s) ? ' active' : '');
-        chip.textContent = s;
-        chip.setAttribute('aria-pressed', active.has(s) ? 'true' : 'false');
-        chip.onclick = () => { active.has(s) ? active.delete(s) : active.add(s); renderChips(); filterAll(); };
-        elSkills.appendChild(chip);
-      });
-    }
-
-    // --- Helpers ---
-    function textHaystack(obj) { return JSON.stringify(obj).toLowerCase(); }
-    function hasAll(tokens, hay) { return tokens.every(t => hay.includes(t)); }
-    function hasAllSelected(skills, selected) {
-      const lower = skills.map(x => x.toLowerCase());
-      return Array.from(selected).every(s => lower.includes(s.toLowerCase()));
-    }
-
-    // --- Cards ---
-    function expCard(exp) {
-      const wrap = document.createElement('article');
-      wrap.className = 'card';
-      const title = document.createElement('h3');
-      title.textContent = `${exp.role} — ${exp.company}`;
-      const meta = document.createElement('div');
-      meta.className = 'meta';
-      meta.textContent = `${exp.dates} • ${exp.location}`;
-      const ul = document.createElement('ul');
-      ul.className = 'highlights';
-      exp.highlights.forEach(h => { const li = document.createElement('li'); li.textContent = h; ul.appendChild(li); });
-      const tags = document.createElement('div');
-      tags.className = 'skills';
-      exp.skills.slice(0, 12).forEach(s => { const t = document.createElement('span'); t.className = 'chip'; t.textContent = s; t.onclick = () => { active.add(s); renderChips(); filterAll(); }; tags.appendChild(t); });
-      wrap.appendChild(title); wrap.appendChild(meta); wrap.appendChild(ul); wrap.appendChild(tags);
-      return wrap;
-    }
-
-    function projCard(p) {
-      const wrap = document.createElement('article');
-      wrap.className = 'card';
-      const title = document.createElement('h3');
-      title.textContent = p.title;
-      const meta = document.createElement('div');
-      meta.className = 'meta';
-      meta.textContent = 'Case Study';
-      const summary = document.createElement('p');
-      summary.textContent = p.summary;
-      const details = document.createElement('details');
-      const sum = document.createElement('summary');
-      sum.textContent = 'Read more';
-      details.appendChild(sum);
-      const dl = document.createElement('ul');
-      dl.className = 'highlights';
-      p.details.forEach(d => { const li = document.createElement('li'); li.textContent = d; dl.appendChild(li); });
-      if (p.outcomes && p.outcomes.length) {
-        const hr = document.createElement('hr');
-        details.appendChild(hr);
-        const ol = document.createElement('ul');
-        ol.className = 'highlights';
-        p.outcomes.forEach(o => { const li = document.createElement('li'); li.textContent = o; ol.appendChild(li); });
-        details.appendChild(ol);
-      }
-      details.appendChild(dl);
-      const tags = document.createElement('div');
-      tags.className = 'skills';
-      p.skills.slice(0, 12).forEach(s => { const t = document.createElement('span'); t.className = 'chip'; t.textContent = s; t.onclick = () => { active.add(s); renderChips(); filterAll(); }; tags.appendChild(t); });
-      wrap.appendChild(title); wrap.appendChild(meta); wrap.appendChild(summary); wrap.appendChild(details); wrap.appendChild(tags);
-      return wrap;
-    }
-
-    function timelineItem(exp) {
-      const wrap = document.createElement('div');
-      wrap.className = 't-item';
-      const title = document.createElement('div');
-      title.className = 't-title';
-      title.textContent = `${exp.company} — ${exp.location}`;
-      const role = document.createElement('div');
-      role.className = 't-role';
-      role.textContent = exp.role;
-      const meta = document.createElement('div');
-      meta.className = 't-meta';
-      meta.textContent = exp.dates;
-      wrap.appendChild(title);
-      wrap.appendChild(role);
-      wrap.appendChild(meta);
-      return wrap;
-    }
-
-    // --- Filtering ---
-    function filterAll() {
-      const q = elSearch.value.trim().toLowerCase();
-      const tokens = q ? q.split(/\s+/).filter(Boolean) : [];
-      const selected = new Set(active);
-
-      // Experience filter
-      const expFiltered = EXPERIENCE.filter(exp => hasAll(tokens, textHaystack(exp)) && hasAllSelected(exp.skills, selected));
-      elRelevant.innerHTML = '';
-      if (expFiltered.length) { expFiltered.forEach(exp => elRelevant.appendChild(expCard(exp))); elNo.style.display = 'none'; }
-      else { elNo.style.display = (tokens.length || selected.size) ? 'block' : 'none'; }
-
-      // Projects filter
-      const projFiltered = PROJECTS.filter(p => hasAll(tokens, textHaystack(p)) && hasAllSelected(p.skills, selected));
-      elProjRel.innerHTML = '';
-      if (projFiltered.length) { projFiltered.forEach(p => elProjRel.appendChild(projCard(p))); elProjNo.style.display = 'none'; }
-      else { elProjNo.style.display = (tokens.length || selected.size) ? 'block' : 'none'; }
-    }
-
-    function renderAll() {
-      elAll.innerHTML = '';
-      EXPERIENCE.forEach(exp => elAll.appendChild(expCard(exp)));
-      elProjAll.innerHTML = '';
-      PROJECTS.forEach(p => elProjAll.appendChild(projCard(p)));
-      elTimeline.innerHTML = '';
-      EXPERIENCE.forEach(exp => elTimeline.appendChild(timelineItem(exp)));
-    }
-
-    // --- Wire up ---
-    elSearch.addEventListener('input', filterAll);
-    document.getElementById('clear').addEventListener('click', () => { active.clear(); elSearch.value=''; renderChips(); filterAll(); });
-    document.getElementById('print').addEventListener('click', () => window.print());
-
-    renderChips();
-    renderAll();
-    filterAll();
-  </script>
-</body>
-</html>
+const elSkills=document.getElementById('skills'),elSearch=document.getElementById('search'),elRelevant=document.getElementById('relevant'),elNo=document.getElementById('no-results'),elAll=document.getElementById('all'),elProjRel=document.getElementById('proj-relevant'),elProjNo=document.getElementById('proj-no-results'),elProjAll=document.getElementById('proj-all'),elTimeline=document.getElementById('timeline');
+const active=new Set();
+function renderChips(){elSkills.innerHTML='';SKILLS.forEach(s=>{const chip=document.createElement('button');chip.className='chip'+(active.has(s)?' active':'');chip.textContent=s;chip.setAttribute('aria-pressed',active.has(s)?'true':'false');chip.onclick=()=>{active.has(s)?active.delete(s):active.add(s);renderChips();filterAll();};elSkills.appendChild(chip);});}
+function textHaystack(obj){return JSON.stringify(obj).toLowerCase();}
+function hasAll(tokens,hay){return tokens.every(t=>hay.includes(t));}
+function hasAllSelected(skills,selected){const lower=(skills||[]).map(x=>String(x).toLowerCase());return Array.from(selected).every(s=>lower.includes(String(s).toLowerCase()));}
+function parseYears(dates){const y=Array.from(String(dates).matchAll(/(19|20)\d{2}|Present/gi)).map(m=>m[0]);let start=y.length?y[0]:'';let end=y.length>1?y[1]:'Present';return{start,end};}
+function expCard(exp){const w=document.createElement('article');w.className='card';const t=document.createElement('h3');t.textContent=`${exp.role} — ${exp.company}`;const m=document.createElement('div');m.className='meta';m.textContent=`${exp.dates} • ${exp.location}`;const ul=document.createElement('ul');ul.className='highlights';(exp.highlights||[]).forEach(h=>{const li=document.createElement('li');li.textContent=h;ul.appendChild(li);});const tags=document.createElement('div');tags.className='tags';(exp.skills||[]).slice(0,12).forEach(s=>{const t=document.createElement('span');t.className='chip';t.textContent=s;t.onclick=()=>{active.add(s);renderChips();filterAll();};tags.appendChild(t);});w.appendChild(t);w.appendChild(m);w.appendChild(ul);w.appendChild(tags);return w;}
+function projCard(p){const w=document.createElement('article');w.className='card';const t=document.createElement('h3');t.textContent=p.title;const m=document.createElement('div');m.className='meta';m.textContent='Case Study';const s=document.createElement('p');s.textContent=p.summary;const d=document.createElement('details');const sm=document.createElement('summary');sm.textContent='Read more';d.appendChild(sm);const dl=document.createElement('ul');dl.className='highlights';(p.details||[]).forEach(x=>{const li=document.createElement('li');li.textContent=x;dl.appendChild(li);});if(p.outcomes&&p.outcomes.length){const hr=document.createElement('hr');d.appendChild(hr);const ol=document.createElement('ul');ol.className='highlights';p.outcomes.forEach(o=>{const li=document.createElement('li');li.textContent=o;ol.appendChild(li);});d.appendChild(ol);}d.appendChild(dl);const tags=document.createElement('div');tags.className='tags';(p.skills||[]).slice(0,12).forEach(sx=>{const t=document.createElement('span');t.className='chip';t.textContent=sx;t.onclick=()=>{active.add(sx);renderChips();filterAll();};tags.appendChild(t);});w.appendChild(t);w.appendChild(m);w.appendChild(s);w.appendChild(d);w.appendChild(tags);return w;}
+function timelineItem(exp){const w=document.createElement('div');w.className='t-item';const t=document.createElement('div');t.className='t-title';t.textContent=`${exp.company} — ${exp.location}`;const r=document.createElement('div');r.className='t-role';r.textContent=exp.role;const m=document.createElement('div');m.className='t-meta';m.textContent=exp.dates;w.appendChild(t);w.appendChild(r);w.appendChild(m);return w;}
+function timelineGroup(year,items){const w=document.createElement('div');const yr=document.createElement('div');yr.className='t-year';yr.textContent=year;w.appendChild(yr);items.forEach(e=>w.appendChild(timelineItem(e)));return w;}
+function filterAll(){const q=elSearch.value.trim().toLowerCase();const tokens=q?q.split(/\s+/).filter(Boolean):[];const selected=new Set(active);const expF=EXPERIENCE.filter(e=>hasAll(tokens,textHaystack(e))&&hasAllSelected(e.skills,selected));elRelevant.innerHTML='';if(expF.length){expF.forEach(e=>elRelevant.appendChild(expCard(e)));elNo.style.display='none';}else{elNo.style.display=(tokens.length||selected.size)?'block':'none';}const projF=PROJECTS.filter(p=>hasAll(tokens,textHaystack(p))&&hasAllSelected(p.skills,selected));elProjRel.innerHTML='';if(projF.length){projF.forEach(p=>elProjRel.appendChild(projCard(p)));elProjNo.style.display='none';}else{elProjNo.style.display=(tokens.length||selected.size)?'block':'none';}}
+function renderAll(){elAll.innerHTML='';EXPERIENCE.forEach(e=>elAll.appendChild(expCard(e)));elProjAll.innerHTML='';PROJECTS.forEach(p=>elProjAll.appendChild(projCard(p)));elTimeline.innerHTML='';const withY=EXPERIENCE.map(e=>{const y=parseYears(e.dates);return Object.assign({},{_start:y.start,_end:y.end},e);});const groups=new Map();withY.forEach(e=>{const yr=e._start||'—';if(!groups.has(yr))groups.set(yr,[]);groups.get(yr).push(e);});const yrs=Array.from(groups.keys()).sort((a,b)=>{if(a==='Present')return -1;if(b==='Present')return 1;return (parseInt(b)||0)-(parseInt(a)||0);});yrs.forEach(y=>elTimeline.appendChild(timelineGroup(y,groups.get(y))));}
+document.getElementById('clear').addEventListener('click',()=>{active.clear();elSearch.value='';renderChips();filterAll();});
+document.getElementById('print').addEventListener('click',()=>window.print());
+elSearch.addEventListener('input',filterAll);
+renderChips();renderAll();filterAll();
+</script>
+</body></html>
