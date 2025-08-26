@@ -1,113 +1,781 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Soumyajit Tarafdar — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0c1022;--bg-accent:#0b122a;--text:#e9eefc;--muted:#a4b2d4;--border:#1e2a52;--panel:#0f1631cc;--panel-solid:#11193a;--accent:#7cb2ff;--accent-2:#b68cff;--chip:#15224a;--shadow:0 10px 30px rgba(0,0,0,.35);--ring:0 0 0 2px color-mix(in oklab,var(--accent),transparent 65%);--grad-1:radial-gradient(800px 500px at 10% -10%,rgba(124,178,255,.25),transparent 60%);--grad-2:radial-gradient(700px 400px at 120% 20%,rgba(182,140,255,.18),transparent 60%)}
-[data-theme="light"]{--bg:#f7f9ff;--bg-accent:#eef3ff;--text:#0f1a2f;--muted:#546386;--border:#d8e1ff;--panel:#ffffffcc;--panel-solid:#ffffff;--accent:#2a67ff;--accent-2:#7a3cff;--chip:#eef3ff;--shadow:0 10px 20px rgba(0,0,0,.08);--ring:0 0 0 2px color-mix(in oklab,var(--accent),transparent 70%);--grad-1:radial-gradient(900px 500px at -10% -20%,rgba(42,103,255,.12),transparent 60%);--grad-2:radial-gradient(700px 400px at 130% 10%,rgba(122,60,255,.10),transparent 60%)}
-*{box-sizing:border-box}html,body{height:100%}body{margin:0;color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);background-image:var(--grad-1),var(--grad-2);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-header{max-width:1250px;margin:24px auto 8px;padding:0 20px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px}.avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;box-shadow:var(--shadow)}.brand h1{font-size:20px;margin:0}.theme-btn{padding:10px 12px;border-radius:10px;background:var(--panel);border:1px solid var(--border);color:var(--text);cursor:pointer;box-shadow:var(--shadow)}.theme-btn:hover{box-shadow:0 12px 28px rgba(0,0,0,.18)}.stats{color:var(--muted);font-size:13px}
-main{max-width:1250px;margin:0 auto 80px;padding:0 20px;display:grid;grid-template-columns:1fr;gap:24px;align-items:start}@media (min-width:1080px){main{grid-template-columns:1.15fr .85fr}}.left,.right{display:grid;gap:24px}.panel{background:var(--panel);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--shadow)}.panel-solid{background:var(--panel-solid);border:1px solid var(--border)}
-.section-title{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px 0}.tagline{color:var(--muted);margin-top:6px}.contact{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;color:var(--muted)}
-.right > .panel{position:sticky;top:16px}.right > .panel + .panel{position:static}@media (max-width:1079px){.right > .panel{position:static}}
-.searchbar input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-accent);color:var(--text);font-size:15px;outline:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
-.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:var(--chip);padding:8px 12px;border-radius:999px;font-size:13px;cursor:pointer;user-select:none;transition:transform .12s ease}.chip:hover{transform:translateY(-1px)}.chip.active{outline:var(--ring);background:color-mix(in oklab,var(--chip),var(--accent) 18%)}
-.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}.btn{padding:10px 14px;border-radius:10px;background:var(--bg-accent);border:1px solid var(--border);color:var(--text);cursor:pointer}.btn:hover{filter:brightness(1.05)}
-.cards{display:grid;grid-template-columns:1fr;gap:14px}@media (min-width:760px){.cards.split-2{grid-template-columns:1fr 1fr}}.card{background:var(--panel-solid);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:var(--shadow);animation:fadeUp .4s ease both}.card h3{margin:0 0 6px 0;font-size:18px}.card .meta{color:var(--muted);font-size:13px;margin-bottom:8px}.highlights{margin:8px 0 0 16px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.timeline{position:relative;padding-left:28px}.timeline::before{content:"";position:absolute;left:12px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent-2));border-radius:2px;opacity:.7}.t-year{font-weight:700;margin:14px 0 8px;color:var(--accent)}.t-item{position:relative;margin:10px 0 16px;padding-left:8px}.t-item::before{content:"";position:absolute;left:-19px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--panel-solid);border:2px solid var(--accent);box-shadow:var(--shadow)}.t-title{font-weight:700}.t-meta{color:var(--muted);font-size:13px}.t-role{margin:4px 0}
-@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media print{.right,.theme-btn,.toolbar,.skills{display:none!important}body{background:#fff;color:#000}.panel,.card{background:#fff!important;border-color:#ddd!important;box-shadow:none!important}}
-</style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumyajit Tarafdar - Technology Leader Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a4f72;
+            --secondary-color: #3a7ca5;
+            --accent-color: #5da271;
+            --light-color: #f5f7fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #666;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-name {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .profile-title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Search Section */
+        .search-section {
+            background-color: var(--light-color);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        #skillSearch {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        #skillSearch:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(58, 124, 165, 0.2);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .section-title i {
+            color: var(--secondary-color);
+        }
+        
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        /* Profile Section */
+        .profile-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Leadership Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .highlight-card {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .highlight-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .job-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+        
+        .company {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .date-location {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .responsibilities {
+            list-style-type: none;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .responsibilities li:before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-category h4 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .skill-item {
+            background-color: var(--light-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: default;
+        }
+        
+        .skill-item:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .skill-item.highlighted {
+            background-color: var(--accent-color);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* Education & Certifications */
+        .education-item, .certification-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .education-title, .certification-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .education-date, .certification-date {
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .achievement-card {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .achievement-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievement-desc {
+            color: var(--text-light);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .back-to-top {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .back-to-top:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .highlights-grid, .skills-container, .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <div class="topbar">
-    <div class="brand">
-      <div class="avatar">ST</div>
-      <div>
-        <h1 style="margin:0;">Soumyajit Tarafdar</h1>
-        <div class="stats">📍 Whitby, ON, Canada ✉️ <a href="mailto:soumyajit0212@gmail.com">soumyajit0212@gmail.com</a> 🔗 <a href="https://www.linkedin.com/in/soumtarafdar" target="_blank" rel="noopener">LinkedIn</a> 🔗 <a href="https://soumyajit0212.github.io/soumyajit" target="_blank" rel="noopener">Personal Profile</a> 📞 (647) 272-4382</div>
-      </div>
-    </div>
-    <button id="theme" class="theme-btn" title="Toggle light/dark">🌙</button>
-  </div>
-</header>
-<main>
-  <div class="left">
-    <section class="panel">
-      <div class="section-title">Profile</div>
-      <h2 style="margin:0 0 6px 0">Relationship-driven Technology Leader • Enterprise & Data Architecture • Banking & Risk Platforms</h2>
-      <p class="tagline">Outcome-led delivery across Finance & Risk, API-first modernization, and governed data platforms. Hands-on with Databricks/Kafka and OSFI/SOX controls.</p>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <h1 class="profile-name">Soumyajit Tarafdar</h1>
+            <p class="profile-title">Relationship-driven Technology Leader in Banking & Finance</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>60 Robinson Cres, Whitby, ON, L1N 6W5</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(647) 272-4382</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>soumyajit0212@gmail.com</span>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/soumtarafdar" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://soumyajit0212.github.io/soumyajit" class="social-link" target="_blank">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <a href="mailto:soumyajit0212@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">ST</div>
+            <ul class="nav-links">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container search-container">
+            <input type="text" id="skillSearch" placeholder="Search skills (e.g., Azure, Java, DevOps, Microservices)...">
+        </div>
     </section>
-    <section class="panel">
-      <div class="section-title">All Experience</div>
-      <div id="all" class="cards split-2"></div>
-    </section>
-    <section class="panel">
-      <div class="section-title">Projects / Case Studies — All</div>
-      <div id="proj-all" class="cards split-2"></div>
-    </section>
-    <section class="panel">
-      <div class="section-title">Career Timeline</div>
-      <div id="timeline" class="timeline"></div>
-    </section>
-  </div>
-  <aside class="right">
-    <section class="panel">
-      <div class="section-title">Find by Skill</div>
-      <div class="searchbar"><input id="search" type="search" placeholder="Try: Kafka, Databricks, OSFI, microservices…" aria-label="Search skills"/></div>
-      <div id="skills" class="skills"></div>
-      <div class="toolbar">
-        <button id="clear" class="btn" title="Clear all filters">Clear</button>
-        <button id="print" class="btn" title="Print/Save to Word">Print</button>
-        <a id="download" class="btn" href="Soumyajit_Tarafdar_New.docx" download>Download Word</a>
-      </div>
-    </section>
-    <section class="panel">
-      <div class="section-title">Relevant Work</div>
-      <div id="relevant" class="cards"></div>
-      <div id="no-results" class="tagline" style="display:none;">No matching items.</div>
-    </section>
-    <section class="panel">
-      <div class="section-title">Relevant Projects</div>
-      <div id="proj-relevant" class="cards"></div>
-      <div id="proj-no-results" class="tagline" style="display:none;">No matching projects.</div>
-    </section>
-  </aside>
-</main>
-<footer style="max-width:1250px;margin:10px auto 60px;padding:0 20px;color:var(--muted)">© 2025 Soumyajit Tarafdar</footer>
-<script>
-const prefersDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
-const savedTheme=localStorage.getItem('theme');const themeBtn=document.getElementById('theme');
-function applyTheme(t){if(t==='light')document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');themeBtn.textContent=(t==='light')?'☀️':'🌙';}
-applyTheme(savedTheme||(prefersDark?'dark':'light'));
-themeBtn.addEventListener('click',()=>{const current=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';const next=current==='light'?'dark':'light';localStorage.setItem('theme',next);applyTheme(next);});
-
-const SKILLS=["Architecture", "Enterprise Architecture", "Microservices", "Event-Driven Systems", "Headless Design", "Java", "Spring Boot", "Python", "React", "REST APIs", "SOAP APIs", "Azure", "Oracle Cloud", "AWS", "Databricks", "Delta Lake", "SQL", "NoSQL", "Snowflake", "Kafka", "NiFi", "Data Catalog", "Data Governance", "Collibra", "Data Quality", "OSFI", "SOX", "PCI-DSS", "API Security", "OAuth2", "TLS", "HSM", "Oracle ERP", "OFSAA", "FCCM", "EPM", "Hyperion", "Financial Accounting Hub", "Oracle Integration Cloud (OIC)", "Oracle SOA Suite", "WebLogic", "BPEL", "OSB", "Mediator", "SOA Suite 12c", "CI/CD", "Jenkins", "Docker", "Kubernetes", "Terraform", "GitHub", "Bitbucket", "Jira", "JFrog", "Nexus", "Selenium", "Cucumber", "Automation", "OpenAI", "LLMs", "GenAI", "OKTA", "OID", "Power BI", "Tableau", "Blockchain", "Counterparty Risk", "Credit Risk"];
-const EXPERIENCE=[{"role": "Senior Manager, Technology Delivery (Director-track)", "company": "TD Bank", "dates": "Mar 2022 – Present", "location": "Toronto, Canada", "highlights": ["Led $20M+ Finance & Risk transformation; migrated legacy platforms to Oracle Cloud & Azure.", "Designed API-first microservices and Azure Databricks pipelines with Kafka/NiFi for streaming.", "Rolled out Enterprise Data Catalog (Collibra), improving data quality scores by 35%.", "Championed GenAI/LLM automations (code-to-docs, invoice-to-text), saving 1,000+ hours annually.", "Implemented CI/CD and testing automation, cutting deployment cycles by ~40%.", "Delivered OSFI/SOX-compliant solutions for credit/counterparty risk reporting."], "skills": ["Microservices", "REST APIs", "Azure", "Oracle Cloud", "Databricks", "Kafka", "NiFi", "Collibra", "Data Governance", "OSFI", "SOX", "CI/CD", "Jenkins", "Bitbucket", "Selenium", "Cucumber", "GenAI", "LLMs", "Oracle Integration Cloud (OIC)", "API Security", "OAuth2"]}, {"role": "Senior Manager / Solutions Architect", "company": "Scotiabank", "dates": "Nov 2018 – Mar 2022", "location": "Toronto, Canada", "highlights": ["Modernized Oracle finance platforms (FAH/OFSAA); real-time replication via Spring Boot + Kafka.", "Migrated to Azure PaaS; reduced licensing by $350K/year; mobile workflow for procurement.", "Invoice processing with OpenAI LLM; reduced manual AP workload by ~60%.", "Piloted distributed ledger (blockchain) for procurement; drove DevOps automation."], "skills": ["Financial Accounting Hub", "OFSAA", "Azure", "Spring Boot", "Kafka", "OpenAI", "LLMs", "Blockchain", "CI/CD", "Jenkins", "Bitbucket", "Jira", "Power BI", "Tableau", "API Security"]}, {"role": "Senior Applications Architect", "company": "MYSSC, Govt. of Ontario", "dates": "Mar 2018 – Nov 2018", "location": "Toronto, Canada", "highlights": ["Oracle ERP administration and roadmap to Oracle Cloud@Customer; licensing & tech requirements.", "E-Business Suite + OpenText via SOA Gateway; reduced latency by ~40%.", "Automated patching/cloning via CI/CD; minimized downtime during quarterly PSUs; tuned ETL/reporting SQL."], "skills": ["Oracle ERP", "Oracle SOA Suite", "WebLogic", "CI/CD", "Automation", "Performance Tuning"]}, {"role": "Oracle Database Architect", "company": "Experian Marketing Services Sdn Bhd", "dates": "Feb 2014 – Dec 2017", "location": "Kuala Lumpur, Malaysia", "highlights": ["Led 12+ DB/Middleware admins; migrated 50+ DBs to Exadata X6-2 & Oracle Cloud; +30% perf.", "Implemented Oracle Big Data Appliance; deployed SOA Suite 12c; enabled OKTA zero-trust.", "DevOps pipelines (Bitbucket/Jenkins/ServiceNow) across EBS, OBIEE, Hyperion, SOA."], "skills": ["Exadata", "Oracle Cloud", "Oracle SOA Suite", "OKTA", "CI/CD", "Jenkins", "Bitbucket", "Hadoop", "Spark", "Hyperion", "OBIEE"]}, {"role": "Senior Oracle Applications DBA", "company": "Tata Consultancy Services", "dates": "Dec 2008 – Jan 2014", "location": "Kolkata, India", "highlights": ["Global R12 upgrades; ensured 99.9% uptime for financial systems across US/UK/EMEA.", "Patching, cloning, and RAC upgrades; SSL; SQL/app performance optimization.", "Responsibilities & change controls; 24/7 production operations support."], "skills": ["Oracle ERP", "R12", "RAC", "SSL", "Performance Tuning", "Change Management"]}];
-const PROJECTS=[{"title": "Finance & Risk Transformation (TD Bank)", "summary": "Oracle Cloud + Azure modernization with API-first microservices and governed data flow.", "details": ["Azure Databricks pipelines for batch + streaming; Kafka/NiFi ingestion.", "Collibra Data Catalog rollout; improved data-quality and glossary coverage.", "OSFI/SOX controls across data lineage, access, and change management."], "outcomes": ["Release cycle -40% via CI/CD", "1,000+ hours saved via LLM automations"], "skills": ["Azure", "Databricks", "Kafka", "NiFi", "Collibra", "OSFI", "SOX", "Microservices", "CI/CD", "LLMs"]}, {"title": "Real-time Finance Replication (Scotiabank)", "summary": "Spring Boot + Kafka eventing for near real-time reconciliations and reporting.", "details": ["Event-driven integration with FAH/OFSAA microservices.", "Azure PaaS migration; $350K/year licensing optimization."], "outcomes": ["Faster close & reporting", "$350K/year cost reduction"], "skills": ["Spring Boot", "Kafka", "Azure", "Financial Accounting Hub", "OFSAA", "Microservices"]}, {"title": "Invoice Automation with LLMs", "summary": "OpenAI-based invoice capture and coding with human-in-the-loop validation.", "details": ["Reduced manual AP workload by ~60%; compliance-aware processing.", "Improved cycle time and coding accuracy."], "outcomes": ["~60% manual effort reduction", "Lower processing time"], "skills": ["OpenAI", "LLMs", "Automation", "API Security"]}, {"title": "Exadata Consolidation & Zero-Trust (Experian)", "summary": "Exadata consolidation (50+ DBs) and zero-trust patterns via OKTA across middleware.", "details": ["SOA Suite 12c; standardized pipelines (Bitbucket/Jenkins/ServiceNow).", "Post-migration performance +30%; simplified ops."], "outcomes": ["+30% performance", "Unified DevOps pipeline"], "skills": ["Exadata", "Oracle SOA Suite", "OKTA", "CI/CD", "Hadoop", "Spark", "Hyperion", "OBIEE"]}];
-
-const elSkills=document.getElementById('skills'),elSearch=document.getElementById('search'),elRelevant=document.getElementById('relevant'),elNo=document.getElementById('no-results'),elAll=document.getElementById('all'),elProjRel=document.getElementById('proj-relevant'),elProjNo=document.getElementById('proj-no-results'),elProjAll=document.getElementById('proj-all'),elTimeline=document.getElementById('timeline');
-const active=new Set();
-function renderChips(){elSkills.innerHTML='';SKILLS.forEach(s=>{const chip=document.createElement('button');chip.className='chip'+(active.has(s)?' active':'');chip.textContent=s;chip.setAttribute('aria-pressed',active.has(s)?'true':'false');chip.onclick=()=>{active.has(s)?active.delete(s):active.add(s);renderChips();filterAll();};elSkills.appendChild(chip);});}
-function textHaystack(obj){return JSON.stringify(obj).toLowerCase();}
-function hasAll(tokens,hay){return tokens.every(t=>hay.includes(t));}
-function hasAllSelected(skills,selected){const lower=(skills||[]).map(x=>String(x).toLowerCase());return Array.from(selected).every(s=>lower.includes(String(s).toLowerCase()));}
-function parseYears(dates){const y=Array.from(String(dates).matchAll(/(19|20)\d{2}|Present/gi)).map(m=>m[0]);let start=y.length?y[0]:'';let end=y.length>1?y[1]:'Present';return{start,end};}
-function expCard(exp){const w=document.createElement('article');w.className='card';const t=document.createElement('h3');t.textContent=`${exp.role} — ${exp.company}`;const m=document.createElement('div');m.className='meta';m.textContent=`${exp.dates} • ${exp.location}`;const ul=document.createElement('ul');ul.className='highlights';(exp.highlights||[]).forEach(h=>{const li=document.createElement('li');li.textContent=h;ul.appendChild(li);});const tags=document.createElement('div');tags.className='tags';(exp.skills||[]).slice(0,12).forEach(s=>{const t=document.createElement('span');t.className='chip';t.textContent=s;t.onclick=()=>{active.add(s);renderChips();filterAll();};tags.appendChild(t);});w.appendChild(t);w.appendChild(m);w.appendChild(ul);w.appendChild(tags);return w;}
-function projCard(p){const w=document.createElement('article');w.className='card';const t=document.createElement('h3');t.textContent=p.title;const m=document.createElement('div');m.className='meta';m.textContent='Case Study';const s=document.createElement('p');s.textContent=p.summary;const d=document.createElement('details');const sm=document.createElement('summary');sm.textContent='Read more';d.appendChild(sm);const dl=document.createElement('ul');dl.className='highlights';(p.details||[]).forEach(x=>{const li=document.createElement('li');li.textContent=x;dl.appendChild(li);});if(p.outcomes&&p.outcomes.length){const hr=document.createElement('hr');d.appendChild(hr);const ol=document.createElement('ul');ol.className='highlights';p.outcomes.forEach(o=>{const li=document.createElement('li');li.textContent=o;ol.appendChild(li);});d.appendChild(ol);}d.appendChild(dl);const tags=document.createElement('div');tags.className='tags';(p.skills||[]).slice(0,12).forEach(sx=>{const t=document.createElement('span');t.className='chip';t.textContent=sx;t.onclick=()=>{active.add(sx);renderChips();filterAll();};tags.appendChild(t);});w.appendChild(t);w.appendChild(m);w.appendChild(s);w.appendChild(d);w.appendChild(tags);return w;}
-function timelineItem(exp){const w=document.createElement('div');w.className='t-item';const t=document.createElement('div');t.className='t-title';t.textContent=`${exp.company} — ${exp.location}`;const r=document.createElement('div');r.className='t-role';r.textContent=exp.role;const m=document.createElement('div');m.className='t-meta';m.textContent=exp.dates;w.appendChild(t);w.appendChild(r);w.appendChild(m);return w;}
-function timelineGroup(year,items){const w=document.createElement('div');const yr=document.createElement('div');yr.className='t-year';yr.textContent=year;w.appendChild(yr);items.forEach(e=>w.appendChild(timelineItem(e)));return w;}
-function filterAll(){const q=elSearch.value.trim().toLowerCase();const tokens=q?q.split(/\s+/).filter(Boolean):[];const selected=new Set(active);const expF=EXPERIENCE.filter(e=>hasAll(tokens,textHaystack(e))&&hasAllSelected(e.skills,selected));elRelevant.innerHTML='';if(expF.length){expF.forEach(e=>elRelevant.appendChild(expCard(e)));elNo.style.display='none';}else{elNo.style.display=(tokens.length||selected.size)?'block':'none';}const projF=PROJECTS.filter(p=>hasAll(tokens,textHaystack(p))&&hasAllSelected(p.skills,selected));elProjRel.innerHTML='';if(projF.length){projF.forEach(p=>elProjRel.appendChild(projCard(p)));elProjNo.style.display='none';}else{elProjNo.style.display=(tokens.length||selected.size)?'block':'none';}}
-function renderAll(){elAll.innerHTML='';EXPERIENCE.forEach(e=>elAll.appendChild(expCard(e)));elProjAll.innerHTML='';PROJECTS.forEach(p=>elProjAll.appendChild(projCard(p)));elTimeline.innerHTML='';const withY=EXPERIENCE.map(e=>{const y=parseYears(e.dates);return Object.assign({},{_start:y.start,_end:y.end},e);});const groups=new Map();withY.forEach(e=>{const yr=e._start||'—';if(!groups.has(yr))groups.set(yr,[]);groups.get(yr).push(e);});const yrs=Array.from(groups.keys()).sort((a,b)=>{if(a==='Present')return -1;if(b==='Present')return 1;return (parseInt(b)||0)-(parseInt(a)||0);});yrs.forEach(y=>elTimeline.appendChild(timelineGroup(y,groups.get(y))));}
-document.getElementById('clear').addEventListener('click',()=>{active.clear();elSearch.value='';renderChips();filterAll();});
-document.getElementById('print').addEventListener('click',()=>window.print());
-elSearch.addEventListener('input',filterAll);
-renderChips();renderAll();filterAll();
-</script>
-</body></html>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <h2 class="section-title"><i class="fas fa-user"></i> Professional Profile</h2>
+            <p class="profile-text">
+                <span class="highlight">Relationship-driven</span> technology leader with 16+ years in banking, steering $20M+ transformation programs and modernizing <span class="highlight">Finance & Risk platforms</span> across <span class="highlight">TD</span> and <span class="highlight">Scotiabank</span>. Deep <span class="highlight">end-to-end architecture expertise</span> spanning enterprise Java/Spring Boot, RESTful APIs, microservices/headless design, streaming (Kafka), data platforms (<span class="highlight">Azure/Oracle Cloud, Databricks, SQL/NoSQL</span>), and front-end/mobile integrations—underpinned by strong <span class="highlight">DevOps</span> (Jenkins, Docker/K8s) and SAFe Agile delivery. Proven record of aligning solutions to business objectives, <span class="highlight">uplifting engineering standards</span>, and navigating governance (<span class="highlight">OSFI/SOX</span>), with measurable impact: multimillion-dollar savings, 40% faster releases, 35% data-quality gains, and AI/automation that cut thousands of manual hours. <span class="highlight">Trusted partner</span> to executives and cross-functional teams, balancing delivery constraints with secure, scalable, client-delighting designs.
+            </p>
+        </section>
+        
+        <!-- Leadership Highlights Section -->
+        <section class="section">
+            <h2 class="section-title"><i class="fas fa-star"></i> Leadership Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3 class="highlight-title">Strategic Leadership</h3>
+                    <p>Steered <span class="highlight">$20M+</span> cloud/data programs across <span class="highlight">Finance & Retail Banking</span>; partnered with executives and line leaders to set architecture direction tied to business OKRs.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <h3 class="highlight-title">Architecture Development</h3>
+                    <p>Led API-first, microservices and event-driven designs; modernized reporting and risk platforms with <span class="highlight">Databricks/Kafka/Delta</span> to improve SLAs by 75% and throughput for financial reporting.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <h3 class="highlight-title">Driving Innovation</h3>
+                    <p>Introduced <span class="highlight">GenAI/LLM</span> automations (doc/invoice processing, semantic mapping) saving 1,000+ hours annually; championed reusable patterns, testing standards, and code review practices.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <h3 class="highlight-title">Governance & Compliance</h3>
+                    <p>Delivered <span class="highlight">OSFI/SOX-compliant</span> solutions for <span class="highlight">Credit/Counterparty Risk</span>; instituted KPIs and controls for quality, privacy, and security across cloud data pipelines.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Senior Manager Technology Delivery (Director-Track Role)</h3>
+                <p class="company">TD Bank</p>
+                <p class="date-location">March 2022 – Present | Toronto, Canada</p>
+                <ul class="responsibilities">
+                    <li>Responsible for driving <span class="highlight">digital and technology transformation</span> at TD Bank for an > <span class="highlight">$20M</span> Finance and Risk program to drive innovative solutions for management, regulatory, and risk reporting, including OSFI and large exposures migrated to Oracle Cloud.</li>
+                    <li>Responsible for <span class="highlight">Managing a team of 15+ people</span> (Developers, Scrum master and Solution Architects) to deliver time critical and mission critical projects across Finance and Risk domain.</li>
+                    <li><span class="highlight">Enterprise Architecture Leadership</span>: Spearheaded the migration of legacy Finance & Risk systems to Oracle Cloud and Azure, designing microservices and RESTful APIs for seamless integration.</li>
+                    <li><span class="highlight">Data & Streaming Solutions</span>: Architected Azure Databricks pipelines for Enterprise Data Foundation (EDF), leveraging Kafka and NiFi for real-time data streaming.</li>
+                    <li><span class="highlight">GenAI Innovation</span>: Led LLM initiatives for automated code-to-documentation (STTM) and invoice-to-text processing, saving 1,000+ manual hours annually.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Senior Manager / Solutions Architect</h3>
+                <p class="company">Scotiabank</p>
+                <p class="date-location">November 2018 – March 2022 | Toronto, Canada</p>
+                <ul class="responsibilities">
+                    <li>Supervised <span class="highlight">10+ infrastructure professionals</span> in meeting dynamic organizational requirements to implement a project which involves Design and implementation of infrastructure for Oracle Financial Accounting Hub and OFSAA.</li>
+                    <li><span class="highlight">API & Microservices</span>: Designed headless architecture for Oracle Financial Accounting Hub using Spring Boot and Kafka for real-time transaction replication.</li>
+                    <li><span class="highlight">Cloud Modernization</span>: Migrated $15M legacy systems to Azure PaaS, reducing licensing costs by $350K/year.</li>
+                    <li>Lead Bank's strategic Initiative for invoice processing for image to text processing using OpenAI LLM models for converting image-based invoices to text and integrate with AP systems.</li>
+                    <li>Collaborated with external vendors to negotiate contracts that met company requirements while minimizing costs by leading initiatives to consolidate multiple micro applications.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Senior Applications Architect</h3>
+                <p class="company">MYSSC Govt. of Ontario</p>
+                <p class="date-location">March 2018 – November 2018 | Toronto, Canada</p>
+                <ul class="responsibilities">
+                    <li>Led the Oracle ERP administration and database administration, including Oracle upgrades, managed software and hardware currency.</li>
+                    <li>Guided the team and provide solutions to integrate Oracle E-Business Suite with OpenText through the Integrated SOA Gateway reducing process latency by 40%.</li>
+                    <li>Performed installation, patching, configuration, and monitoring of Oracle Fusion Middleware components in PROD and non-PROD environments.</li>
+                    <li>Played a pivotal role in automation for technical processes like patching, cloning, and deployments using CI/CD.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Oracle Database Architect</h3>
+                <p class="company">Experian Marketing Services SDN BHD</p>
+                <p class="date-location">February 2014 – December 2017 | Kuala Lumpur, Malaysia</p>
+                <ul class="responsibilities">
+                    <li>Managed a team of 12+ Database and Middleware Administrators to provide innovative solutions and provide 24/7 support across different geographical locations.</li>
+                    <li>Planned, migrated, and consolidated databases on the Exadata X6-2 machine working with Vendor. Migrated 50+ databases to Exadata X6-2 and Oracle Cloud, improving performance by 30%.</li>
+                    <li>Data Lake & Big Data: Implemented Oracle Big Data Appliance with Spark/Hadoop for global data fabric.</li>
+                    <li>Middleware: Deployed Oracle SOA Suite 12c for ERP integrations, enabling zero-trust auth via OKTA.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title"><i class="fas fa-tools"></i> Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Core Expertise</h4>
+                    <div class="skills-list">
+                        <div class="skill-item">Enterprise Architecture</div>
+                        <div class="skill-item">Microservices</div>
+                        <div class="skill-item">Headless Design</div>
+                        <div class="skill-item">Event-Driven Systems</div>
+                        <div class="skill-item">Full-Stack Development</div>
+                        <div class="skill-item">Java Spring Boot</div>
+                        <div class="skill-item">REST/SOAP APIs</div>
+                        <div class="skill-item">Financial Systems</div>
+                        <div class="skill-item">Oracle ERP</div>
+                        <div class="skill-item">OFSAA</div>
+                        <div class="skill-item">FCCM</div>
+                        <div class="skill-item">EPM</div>
+                        <div class="skill-item">Banking Compliance</div>
+                        <div class="skill-item">OSFI</div>
+                        <div class="skill-item">SOX</div>
+                        <div class="skill-item">PCI-DSS</div>
+                        <div class="skill-item">Fusion Middleware</div>
+                        <div class="skill-item">Oracle SOA Suite</div>
+                        <div class="skill-item">BPEL</div>
+                        <div class="skill-item">OSB</div>
+                        <div class="skill-item">Oracle Integration Cloud</div>
+                        <div class="skill-item">WebLogic Server</div>
+                        <div class="skill-item">Security</div>
+                        <div class="skill-item">TLS</div>
+                        <div class="skill-item">API Security</div>
+                        <div class="skill-item">Encryption</div>
+                        <div class="skill-item">HSM</div>
+                        <div class="skill-item">OAuth2</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Technical Skills</h4>
+                    <div class="skills-list">
+                        <div class="skill-item">Cloud/Data</div>
+                        <div class="skill-item">Oracle Cloud</div>
+                        <div class="skill-item">Azure</div>
+                        <div class="skill-item">AWS</div>
+                        <div class="skill-item">Databricks</div>
+                        <div class="skill-item">Snowflake</div>
+                        <div class="skill-item">Collibra</div>
+                        <div class="skill-item">SQL/NoSQL</div>
+                        <div class="skill-item">MongoDB</div>
+                        <div class="skill-item">Languages/Frameworks</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">Spring Boot</div>
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">React</div>
+                        <div class="skill-item">DevOps</div>
+                        <div class="skill-item">Jenkins</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">Kubernetes</div>
+                        <div class="skill-item">Terraform</div>
+                        <div class="skill-item">GitHub</div>
+                        <div class="skill-item">AI/ML</div>
+                        <div class="skill-item">OpenAI</div>
+                        <div class="skill-item">LLMs</div>
+                        <div class="skill-item">GenAI</div>
+                        <div class="skill-item">Semantic Mapping</div>
+                        <div class="skill-item">Financial Systems</div>
+                        <div class="skill-item">Oracle Cloud ERP</div>
+                        <div class="skill-item">OFSAA</div>
+                        <div class="skill-item">FCCM</div>
+                        <div class="skill-item">EPM</div>
+                        <div class="skill-item">Hyperion</div>
+                        <div class="skill-item">Oracle Integration Cloud</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education & Certifications</h2>
+            
+            <div class="education-item">
+                <h3 class="education-title">Bachelor of Technology</h3>
+                <p class="education-date">August 2008 | West Bengal University of Technology (WBUT)</p>
+            </div>
+            
+            <div class="education-item">
+                <h3 class="education-title">Post Graduate Diploma in Information Technology</h3>
+                <p class="education-date">June 2012 | Symbiosis Centre for Distance Learning (SCDL, Pune)</p>
+            </div>
+            
+            <h3 style="margin-top: 2rem;">Certifications</h3>
+            <div class="certification-item">
+                <p class="certification-title">Certified SAFe® 6 Agilist</p>
+            </div>
+            <div class="certification-item">
+                <p class="certification-title">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</p>
+            </div>
+            <div class="certification-item">
+                <p class="certification-title">ORACLE EXADATA DATABASE MACHINE AND CLOUD SERVICE 2017 CERTIFIED IMPLEMENTATION SPECIALIST</p>
+            </div>
+            <div class="certification-item">
+                <p class="certification-title">ORACLE DATABASE 11G PERFORMANCE TUNING CERTIFIED EXPERT</p>
+            </div>
+            <div class="certification-item">
+                <p class="certification-title">ORACLE ENTERPRISE MANAGER 11G CERTIFIED IMPLEMENTATION SPECIALIST</p>
+            </div>
+            <div class="certification-item">
+                <p class="certification-title">ORACLE ENTERPRISE MANAGER 12C CERTIFIED IMPLEMENTATION SPECIALIST</p>
+            </div>
+            <div class="certification-item">
+                <p class="certification-title">ORACLE EXADATA 11G CERTIFIED IMPLEMENTATION SPECIALIST</p>
+            </div>
+            <div class="certification-item">
+                <p class="certification-title">SIX SIGMA/DMAIC CERTIFICATION</p>
+            </div>
+        </section>
+        
+        <!-- Achievements Section -->
+        <section id="achievements" class="section">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Key Achievements</h2>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-value">$20M+</div>
+                    <p class="achievement-desc">Program Leadership (TD Bank) — Cloud migration, AI automation, and risk compliance</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-value">$1M</div>
+                    <p class="achievement-desc">Annual Cost Savings (Scotiabank) — Vendor consolidation and DevOps automation</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-value">70%</div>
+                    <p class="achievement-desc">Efficiency Gain — AI-driven STTM and legacy code conversion</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-value">35%</div>
+                    <p class="achievement-desc">Data Quality Improvement — Enterprise Data Catalog implementation</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2023 Soumyajit Tarafdar. All rights reserved.</p>
+            <a href="#" class="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+                Back to Top
+            </a>
+        </div>
+    </footer>
+    
+    <script>
+        // Skill search functionality
+        document.getElementById('skillSearch').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const skillItems = document.querySelectorAll('.skill-item');
+            
+            skillItems.forEach(item => {
+                const skillText = item.textContent.toLowerCase();
+                if (skillText.includes(searchTerm)) {
+                    item.classList.add('highlighted');
+                    // Scroll to the first highlighted skill
+                    if (searchTerm.length > 0) {
+                        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                } else {
+                    item.classList.remove('highlighted');
+                }
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Back to top button
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
